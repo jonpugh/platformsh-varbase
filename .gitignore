@@ -36,3 +36,7 @@ private
 drush-backups
 .console
 /.editorconfig
+
+# Ignore yarn lint dependencies.
+node_modules
+yarn.lock

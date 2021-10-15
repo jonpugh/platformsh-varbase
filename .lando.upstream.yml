@@ -31,9 +31,9 @@ services:
   appserver:
     scanner: false
     build:
-      - "composer global require drupal/coder dealerdirect/phpcodesniffer-composer-installer mglaman/drupal-check phpunit/phpunit"
+      - "composer global require drupal/coder dealerdirect/phpcodesniffer-composer-installer mglaman/drupal-check"
       - 'export PATH="/var/www/.composer/vendor/bin"'
-      - "wget https://asm89.github.io/d/twig-lint.phar -P /var/www"
+      - "wget https://asm89.github.io/d/twig-lint.phar -P /var/www -O twig-lint.phar"
     xdebug: true
     config:
       php: .lando/.php.ini
