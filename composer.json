@@ -39,7 +39,7 @@
     "vardot/varbase": "~9.0",
     "vardot/varbase-updater": "~2.0",
     "drupal/redis": "^1.5",
-    "drush/drush": "^10.5",
+    "drush/drush": "^10",
     "platformsh/config-reader": "^2.4"
   },
   "require-dev": {
