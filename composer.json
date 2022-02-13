@@ -36,7 +36,7 @@
     "drupal/core-project-message": "^9",
     "webflo/drupal-finder": "~1.0",
     "webmozart/path-util": "~2.0",
-    "vardot/varbase": "~9.0",
+    "vardot/varbase": "~9.0.0",
     "vardot/varbase-updater": "~2.0",
     "drupal/redis": "^1.5",
     "drush/drush": "^10",
@@ -60,6 +60,7 @@
       "oomphinc/composer-installers-extender": true,
       "drupal/core-composer-scaffold": true,
       "drupal/core-project-message": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true,
       "vardot/varbase-updater": true
     }
   },
