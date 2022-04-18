@@ -19,6 +19,8 @@ runtime:
         - imagick
         - apcu
         - sodium
+    sizing_hints:
+        request_memory: 256
 
 # The relationships of the application with services or other applications.
 #
