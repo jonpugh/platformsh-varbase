@@ -4,10 +4,10 @@
 # See https://docs.platform.sh/configuration/app.html
 
 # The name of this app. Must be unique within a project.
-name: 'app'
+name: 'drupal'
 
 # The runtime the application uses.
-type: 'php:7.4'
+type: 'php:8.0'
 
 dependencies:
     php:
@@ -19,6 +19,7 @@ runtime:
         - imagick
         - apcu
         - sodium
+        - blackfire
 
 # The relationships of the application with services or other applications.
 #
@@ -65,7 +66,6 @@ mounts:
 
 # Configuration of the build of this application.
 build:
-    # Automatically run `composer install` on every build.
     flavor: composer
 
 # The hooks executed at various points in the lifecycle of the application.
