@@ -9,7 +9,7 @@ use Drupal\Core\Installer\InstallerKernel;
 $platformsh = new \Platformsh\ConfigReader\Config();
 
 if (PHP_SAPI !== 'cli') {
-  ini_set('memory_limit', '256M');
+  ini_set('memory_limit', '512M');
 }
 
 // Configure the database.
