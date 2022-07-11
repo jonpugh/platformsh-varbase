@@ -31,7 +31,7 @@
     "drupal/core-composer-scaffold": "^9",
     "drupal/core-project-message": "^9",
     "webflo/drupal-finder": "~1.0",
-    "vardot/varbase": "~9.0.0",
+    "vardot/varbase": "~9.0",
     "vardot/varbase-updater": "~2.0",
     "drupal/redis": "^1.5",
     "drush/drush": "^11.0",
