@@ -25,8 +25,8 @@
     }
   },
   "require": {
-    "composer/installers": "~1.0 || ~2.0",
-    "oomphinc/composer-installers-extender": "~1.0 || ~2.0",
+    "composer/installers": "~2.0",
+    "oomphinc/composer-installers-extender": "~2.0",
     "cweagans/composer-patches": "~1.0",
     "drupal/core-composer-scaffold": "^9",
     "drupal/core-project-message": "^9",
@@ -71,56 +71,54 @@
     "drupal/drupal": "*"
   },
   "extra": {
+    "branch-alias": {
+      "dev-9.0.x": "9.0.x-dev",
+      "dev-10.0.x": "10.0.x-dev"
+    },
+    "drupal-core-project-message": {
+      "include-keys": ["homepage", "support"],
+      "post-create-project-cmd-message": [
+          "<bg=blue;fg=white>                                                         </>",
+          "<bg=blue;fg=white>  Congratulations, you’ve installed the Varbase codebase </>",
+          "<bg=blue;fg=white>  from the vardot/varbase-project template!              </>",
+          "<bg=blue;fg=white>                                                         </>",
+          "",
+          "<bg=yellow;fg=black>Next steps</>:",
+
+          "  * Install the site: https://www.drupal.org/docs/installing-drupal",
+          "  * Read the user guide: https://docs.varbase.vardot.com",
+          "  * Get support: https://www.vardot.com/en/form/get-support-varbase",
+          "  * Join Our Slack Team for Feedback and Support:",
+          "      http://slack.varbase.vardot.com",
+          "  * Remove the plugin that prints this message:",
+          "      composer remove drupal/core-project-message"
+      ]
+    },
     "drupal-scaffold": {
       "allowed-packages": [
-        "drupal/core"
+        "drupal/core",
+        "vardot/varbase"
       ],
+      "gitignore": true,
       "locations": {
-        "web-root": "docroot/"
+        "web-root": "./docroot"
       },
       "file-mapping": {
+        "[web-root]/sites/default/default.services.yml": {
+          "mode": "replace",
+          "overwrite": false,
+          "path": "docroot/core/assets/scaffold/files/default.services.yml"
+        },
+        "[web-root]/sites/default/default.settings.php": {
+          "mode": "replace",
+          "overwrite": false,
+          "path": "docroot/core/assets/scaffold/files/default.settings.php"
+        },
         "[web-root]/robots.txt": {
           "append": "docroot/profiles/varbase/src/assets/varbase-robots-additions.txt"
         }
       }
     },
-    "drupal-core-project-message": {
-        "include-keys": ["homepage", "support"],
-        "post-create-project-cmd-message": [
-            "<bg=blue;fg=white>                                                         </>",
-            "<bg=blue;fg=white>  Congratulations, you’ve installed the Varbase codebase </>",
-            "<bg=blue;fg=white>  from the vardot/varbase-project template!              </>",
-            "<bg=blue;fg=white>                                                         </>",
-            "",
-            "<bg=yellow;fg=black>Next steps</>:",
-
-            "  * Install the site: https://www.drupal.org/docs/installing-drupal",
-            "  * Read the user guide: https://docs.varbase.vardot.com",
-            "  * Get support: https://www.vardot.com/en/form/get-support-varbase",
-            "  * Join Our Slack Team for Feedback and Support:",
-            "      http://slack.varbase.vardot.com",
-            "  * Remove the plugin that prints this message:",
-            "      composer remove drupal/core-project-message"
-        ]
-    },
-    "_readme": [
-      "NOTICE: We're now using composer patches from Vardot repository to suggest",
-      "several fixes and better handling of patches in your Drupal project.",
-      "You'll notice that we have included (https://github.com/vardot/composer-patches)",
-      "in this composer.json repositories. This will replace the original",
-      "library (cweagans/composer-patches) with our own from (vardot/composer-patches).",
-      "See https://github.com/cweagans/composer-patches/pull/243 and more details",
-      "on our changes on the composer-patches package. Once our changes get merged,",
-      "we will revert to using (cweagans/composer-patches) without this override."
-    ],
-    "branch-alias": {
-      "dev-9.0.x": "9.0.x-dev",
-      "dev-10.0.x": "10.0.x-dev"
-    },
-    "installer-types": [
-      "bower-asset",
-      "npm-asset"
-    ],
     "installer-paths": {
       "docroot/core": ["type:drupal-core"],
       "docroot/profiles/{$name}": ["type:drupal-profile"],
@@ -139,6 +137,10 @@
       "docroot/themes/custom/{$name}": ["type:drupal-custom-theme"],
       "drush/contrib/{$name}": ["type:drupal-drush"]
     },
+    "installer-types": [
+      "bower-asset",
+      "npm-asset"
+    ],
     "drupal-libraries": {
       "library-directory": "docroot/libraries",
       "libraries": [
@@ -159,6 +161,7 @@
     "composer-exit-on-patch-failure": true,
     "patchLevel": {
       "drupal/core": "-p2"
-    }
+    },
+    "patches": {}
   }
 }
