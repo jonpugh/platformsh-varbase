@@ -36,7 +36,7 @@ disk: 2048
 # The 'mounts' describe writable, persistent filesystem mounts in the application.
 mounts:
     # The default Drupal files directory.
-    '/web/sites/default/files':
+    '/docroot/sites/default/files':
         source: local
         source_path: 'files'
     # Drupal gets its own dedicated tmp directory. The settings.platformsh.php
@@ -147,11 +147,5 @@ crons:
     # Run Drupal's cron tasks every 19 minutes.
     drupal:
         spec: '*/19 * * * *'
-        cmd: 'cd web ; drush core-cron'
-
-source:
-  operations:
-    auto-update:
-      command: |
-        curl -fsS https://raw.githubusercontent.com/platformsh/source-operations/main/setup.sh | { bash /dev/fd/3 sop-autoupdate; } 3<&0
+        cmd: 'cd docroot ; drush core-cron'
 
