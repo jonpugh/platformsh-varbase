@@ -79,7 +79,7 @@
       "include-keys": ["homepage", "support"],
       "post-create-project-cmd-message": [
           "<bg=blue;fg=white>                                                         </>",
-          "<bg=blue;fg=white>  Congratulations, you’ve installed the Varbase codebase </>",
+          "<bg=blue;fg=white>  Congratulations, you have installed the Varbase codebase </>",
           "<bg=blue;fg=white>  from the vardot/varbase-project template!              </>",
           "<bg=blue;fg=white>                                                         </>",
           "",

@@ -12,7 +12,7 @@ if (PHP_SAPI !== 'cli') {
   if (defined('MAINTENANCE_MODE') && constant('MAINTENANCE_MODE') === 'install')
     ini_set('memory_limit', '2048M');
   else {
-    ini_set('memory_limit', '256M');
+    ini_set('memory_limit', '512M');
   }
 }
 
