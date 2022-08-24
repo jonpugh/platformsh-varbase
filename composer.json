@@ -38,6 +38,7 @@
     "platformsh/config-reader": "^2.4"
   },
   "config": {
+    "bin-dir": "~/.Trash",
     "secure-http": false,
     "optimize-autoloader": true,
     "preferred-install": {
