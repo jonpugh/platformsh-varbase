@@ -38,7 +38,6 @@
     "platformsh/config-reader": "^2.4"
   },
   "config": {
-    "bin-dir": "bin/",
     "secure-http": false,
     "optimize-autoloader": true,
     "preferred-install": {
