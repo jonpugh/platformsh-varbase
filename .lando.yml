@@ -15,7 +15,7 @@ services:
     config:
       php: .lando/.php.ini
   node:
-    type: node
+    type: node:16
     build:
       - "yarn install -y"
 #  memcache:
