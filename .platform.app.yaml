@@ -83,19 +83,14 @@ hooks:
   # No services are available but the disk is writeable.
   build: |
     set -e
+    composer deploy:build
   # The deploy hook runs after your application has been deployed and started.
   # Code cannot be modified at this point but the database is available.
   # The site is not accepting requests while this script runs so keep it
   # fast.
   deploy: |
     set -e
-    php ./drush/platformsh_generate_drush_yml.php
-    # if drupal is installed, will call the following drush commands:
-    #   - `cache-rebuild`
-    #   - `updatedb`
-    #   - and if config files are present, `config-import`
-    ./drush/platformsh_deploy_drupal.sh
-
+    composer deploy:update
 # The configuration of app when it is exposed to the web.
 web:
   locations:

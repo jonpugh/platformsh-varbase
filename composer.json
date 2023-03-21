@@ -55,6 +55,12 @@
     }
   },
   "scripts": {
+    "deploy:build": [
+      "composer install --no-dev --profile"
+    ],
+    "deploy:update": [
+      "drush deploy"
+    ],
     "post-install-cmd": [
       "Varbase\\composer\\ScriptHandler::createRequiredFiles",
       "Varbase\\composer\\ScriptHandler::removeGitDirectories"
